@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CursoDevWebAPI.Business.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CursoDevWebAPI.Data.Context
 {
