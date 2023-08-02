@@ -1,4 +1,4 @@
-﻿using CursoDevWevAPI.Business.Models;
+﻿using CursoDevWebAPI.Business.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

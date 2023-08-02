@@ -1,6 +1,4 @@
-﻿using CursoDevWebAPI.App.ViewModels;
-using DevIO.App.ViewModels;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CursoDevWebAPI.Api.ViewModels
 {

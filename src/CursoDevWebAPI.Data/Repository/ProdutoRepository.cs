@@ -1,6 +1,6 @@
 ﻿using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Data.Context;
-using CursoDevWevAPI.Business.Models;
+using CursoDevWebAPI.Business.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CursoDevWebAPI.Data.Repository

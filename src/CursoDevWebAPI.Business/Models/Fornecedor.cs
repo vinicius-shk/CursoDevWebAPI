@@ -1,4 +1,4 @@
-﻿using CursoDevWevAPI.Business.Models;
+﻿using CursoDevWebAPI.Business.Models;
 
 namespace CursoDevWebAPI.Business.Models
 {

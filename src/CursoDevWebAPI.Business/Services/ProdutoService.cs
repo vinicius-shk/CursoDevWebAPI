@@ -1,6 +1,6 @@
 ﻿using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Models.Validations;
-using CursoDevWevAPI.Business.Models;
+using CursoDevWebAPI.Business.Models;
 
 namespace CursoDevWebAPI.Business.Services
 {

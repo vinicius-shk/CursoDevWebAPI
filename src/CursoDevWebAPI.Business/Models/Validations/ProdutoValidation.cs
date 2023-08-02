@@ -1,4 +1,4 @@
-﻿using CursoDevWevAPI.Business.Models;
+﻿using CursoDevWebAPI.Business.Models;
 using FluentValidation;
 
 namespace CursoDevWebAPI.Business.Models.Validations

@@ -1,7 +1,6 @@
-﻿using CursoDevWebAPI.Api.ViewModels;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace DevIO.App.ViewModels
+namespace CursoDevWebAPI.Api.ViewModels
 {
     public class ProdutoViewModel
     {

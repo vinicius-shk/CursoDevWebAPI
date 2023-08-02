@@ -1,6 +1,4 @@
-﻿using CursoDevWebAPI.Business.Models;
-
-namespace CursoDevWevAPI.Business.Models
+﻿namespace CursoDevWebAPI.Business.Models
 {
     public class Produto : Entity
     {

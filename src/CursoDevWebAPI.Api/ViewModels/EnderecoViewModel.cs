@@ -1,8 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace CursoDevWebAPI.App.ViewModels
+namespace CursoDevWebAPI.Api.ViewModels
 {
     public class EnderecoViewModel
     {

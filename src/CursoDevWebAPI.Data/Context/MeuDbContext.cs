@@ -1,5 +1,4 @@
 ﻿using CursoDevWebAPI.Business.Models;
-using CursoDevWevAPI.Business.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CursoDevWebAPI.Data.Context
