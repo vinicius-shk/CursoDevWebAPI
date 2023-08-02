@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\CursoDevWebAPI.Business\CursoDevWevAPI.Business.csproj" />
 		<ProjectReference Include="..\DevIO.Business\DevIO.Business.csproj" />
 	</ItemGroup>
 
