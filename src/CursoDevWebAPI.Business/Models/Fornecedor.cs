@@ -1,4 +1,6 @@
-﻿namespace CursoDevWebAPI.Business.Models
+﻿using CursoDevWevAPI.Business.Models;
+
+namespace CursoDevWebAPI.Business.Models
 {
     public class Fornecedor : Entity
     {

@@ -1,4 +1,4 @@
-﻿using CursoDevWebAPI.Business.Models;
+﻿using CursoDevWevAPI.Business.Models;
 
 namespace CursoDevWebAPI.Business.Intefaces
 {
