@@ -2,10 +2,12 @@
 using CursoDevWebAPI.Api.ViewModels;
 using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CursoDevWebAPI.Api.Controllers
 {
+    [Authorize]
     [Route("api/produtos")]
     public class ProdutosController : MainController
     {
@@ -23,6 +25,7 @@ namespace CursoDevWebAPI.Api.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
@@ -30,6 +33,7 @@ namespace CursoDevWebAPI.Api.Controllers
                 await _produtoRepository.ObterProdutosFornecedores());
         }
 
+        [AllowAnonymous]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> ObterPorId(Guid id)
         {
