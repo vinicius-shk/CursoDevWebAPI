@@ -1,6 +1,5 @@
 using CursoDevWebAPI.Api.Configuration;
 using CursoDevWebAPI.Data.Context;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -20,20 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.ResolveDependencies();
-
-builder.Services.Configure<ApiBehaviorOptions>(o =>
-{
-    o.SuppressModelStateInvalidFilter = true;
-});
-
-builder.Services.AddCors(o =>
-{
-    o.AddPolicy("Development",
-        builder => builder.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials());
-});
+builder.Services.WebApiConfig();
 
 var app = builder.Build();
 
@@ -49,15 +35,8 @@ else
     app.UseHsts();
 }
 
-app.UseCors("Development");
-
-app.UseHttpsRedirection();
-
 app.UseRouting();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.UseMvcConfiguration();
 
 app.Run();
