@@ -26,6 +26,15 @@ builder.Services.Configure<ApiBehaviorOptions>(o =>
     o.SuppressModelStateInvalidFilter = true;
 });
 
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy("Development",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,6 +48,8 @@ else
 {
     app.UseHsts();
 }
+
+app.UseCors("Development");
 
 app.UseHttpsRedirection();
 
