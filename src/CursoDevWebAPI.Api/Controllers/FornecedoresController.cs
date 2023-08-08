@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CursoDevWebAPI.Api.Extensions;
 using CursoDevWebAPI.Api.ViewModels;
 using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Models;
@@ -28,7 +29,6 @@ namespace CursoDevWebAPI.Api.Controllers
             _enderecoRepository = enderecoRepository;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
         {
@@ -51,6 +51,7 @@ namespace CursoDevWebAPI.Api.Controllers
             return fornecedor;
         }
 
+        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
@@ -61,6 +62,7 @@ namespace CursoDevWebAPI.Api.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id,
                                                                        FornecedorViewModel fornecedorViewModel)
@@ -78,6 +80,7 @@ namespace CursoDevWebAPI.Api.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("atualizar-endereco/{id:guid}")]
         public async Task<IActionResult> AtualizarEndereco(Guid id,
                                                            EnderecoViewModel enderecoViewModel)
@@ -95,6 +98,7 @@ namespace CursoDevWebAPI.Api.Controllers
             return CustomResponse(enderecoViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Remover")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Excluir(Guid id)
         {

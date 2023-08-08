@@ -6,6 +6,8 @@ namespace CursoDevWebAPI.Api.Configuration
     {
         public static IServiceCollection WebApiConfig(this IServiceCollection services)
         {
+            services.AddControllers();
+
             services.Configure<ApiBehaviorOptions>(o =>
             {
                 o.SuppressModelStateInvalidFilter = true;
