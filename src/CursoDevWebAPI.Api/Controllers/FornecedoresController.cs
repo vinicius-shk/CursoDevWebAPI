@@ -79,7 +79,7 @@ namespace CursoDevWebAPI.Api.Controllers
 
             return CustomResponse(fornecedorViewModel);
         }
-
+        
         [ClaimsAuthorize("Fornecedor", "Atualizar")]
         [HttpPut("atualizar-endereco/{id:guid}")]
         public async Task<IActionResult> AtualizarEndereco(Guid id,
