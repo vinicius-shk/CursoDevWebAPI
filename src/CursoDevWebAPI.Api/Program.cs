@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.ResolveDependencies();
 builder.Services.WebApiConfig();
+builder.Services.AddIdentityConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
@@ -36,6 +37,8 @@ else
 }
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseMvcConfiguration();
 
