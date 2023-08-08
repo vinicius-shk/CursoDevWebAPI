@@ -33,7 +33,6 @@ namespace CursoDevWebAPI.Api.Controllers
                 await _produtoRepository.ObterProdutosFornecedores());
         }
 
-        [AllowAnonymous]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> ObterPorId(Guid id)
         {
