@@ -1,8 +1,10 @@
-﻿using CursoDevWebAPI.Business.Intefaces;
+﻿using CursoDevWebAPI.Api.Extensions;
+using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Notificacoes;
 using CursoDevWebAPI.Business.Services;
 using CursoDevWebAPI.Data.Context;
 using CursoDevWebAPI.Data.Repository;
+using CursoDevWevAPI.Business.Intefaces;
 
 namespace CursoDevWebAPI.Api.Configuration
 {
@@ -18,6 +20,9 @@ namespace CursoDevWebAPI.Api.Configuration
             services.AddScoped<INotificador, Notificador>();
             services.AddScoped<IFornecedorService, FornecedorService>();
             services.AddScoped<IProdutoService, ProdutoService>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUser, AspNetUser>();
 
 
             return services;

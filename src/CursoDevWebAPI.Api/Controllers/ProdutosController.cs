@@ -2,6 +2,7 @@
 using CursoDevWebAPI.Api.ViewModels;
 using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Models;
+using CursoDevWevAPI.Business.Intefaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +19,8 @@ namespace CursoDevWebAPI.Api.Controllers
         public ProdutosController(INotificador notificador,
                                   IProdutoRepository produtoRepository,
                                   IProdutoService produtoService,
-                                  IMapper mapper) : base(notificador)
+                                  IMapper mapper,
+                                  IUser user) : base(notificador, user)
         {
             _produtoRepository = produtoRepository;
             _produtoService = produtoService;

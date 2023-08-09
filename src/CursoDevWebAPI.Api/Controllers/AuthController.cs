@@ -1,6 +1,7 @@
 ﻿using CursoDevWebAPI.Api.Extensions;
 using CursoDevWebAPI.Api.ViewModels;
 using CursoDevWebAPI.Business.Intefaces;
+using CursoDevWevAPI.Business.Intefaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -21,7 +22,8 @@ namespace CursoDevWebAPI.Api.Controllers
         public AuthController(INotificador notificador,
                               SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings) : base(notificador)
+                              IOptions<AppSettings> appSettings,
+                              IUser user) : base(notificador, user)
         {
             _signInManager = signInManager;
             _userManager = userManager;

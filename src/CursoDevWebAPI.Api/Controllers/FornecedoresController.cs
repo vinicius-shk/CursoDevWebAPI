@@ -3,6 +3,7 @@ using CursoDevWebAPI.Api.Extensions;
 using CursoDevWebAPI.Api.ViewModels;
 using CursoDevWebAPI.Business.Intefaces;
 using CursoDevWebAPI.Business.Models;
+using CursoDevWevAPI.Business.Intefaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +22,8 @@ namespace CursoDevWebAPI.Api.Controllers
                                       IMapper mapper,
                                       IFornecedorService fornecedorService,
                                       INotificador notificador,
-                                      IEnderecoRepository enderecoRepository) : base(notificador)
+                                      IEnderecoRepository enderecoRepository,
+                                      IUser user) : base(notificador, user)
         {
             _fornecedorRepository = fornecedorRepository;
             _mapper = mapper;
