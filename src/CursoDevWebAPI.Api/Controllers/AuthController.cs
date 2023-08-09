@@ -12,7 +12,10 @@ using System.Text;
 
 namespace CursoDevWebAPI.Api.Controllers
 {
-    [Route("api")]
+    // [ApiVersion("2.0")]
+    // [ApiVersion("1.0", Deprecated = true)]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
