@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 
 namespace CursoDevWebAPI.Api.Configuration
 {
@@ -19,6 +20,16 @@ namespace CursoDevWebAPI.Api.Configuration
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader());
+
+                // Exemplo de politica por ambiente.
+                o.AddPolicy("Production",
+                    builder => 
+                    builder
+                        .WithMethods("GET")
+                        .WithOrigins("http://meusite.com")
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        //.WithHeaders(HeaderNames.ContentType, "x-custom-header")
+                        .AllowAnyHeader());
             });
 
             return services;
@@ -26,7 +37,6 @@ namespace CursoDevWebAPI.Api.Configuration
 
         public static IApplicationBuilder UseMvcConfiguration(this IApplicationBuilder app)
         {
-            app.UseCors("Development");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
