@@ -5,6 +5,8 @@ using CursoDevWebAPI.Business.Services;
 using CursoDevWebAPI.Data.Context;
 using CursoDevWebAPI.Data.Repository;
 using CursoDevWevAPI.Business.Intefaces;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CursoDevWebAPI.Api.Configuration
 {
@@ -23,6 +25,8 @@ namespace CursoDevWebAPI.Api.Configuration
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUser, AspNetUser>();
+
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
 
             return services;

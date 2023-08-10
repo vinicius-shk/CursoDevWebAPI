@@ -5,7 +5,7 @@ namespace CursoDevWebAPI.Api.Configuration
 {
     public static class ApiConfig
     {
-        public static IServiceCollection WebApiConfig(this IServiceCollection services)
+        public static IServiceCollection AddApiConfig(this IServiceCollection services)
         {
             services.AddControllers();
 
