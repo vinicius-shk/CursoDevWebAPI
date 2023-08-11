@@ -20,10 +20,14 @@ builder.Services.AddControllers().AddJsonOptions(o =>
     o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.ResolveDependencies();
+
+//builder.Services.AddHealthChecks()
+//    .AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), name: "BancoSqlServer");
+
 builder.Services.AddApiConfig();
 builder.Services.AddSwaggerConfig();
-builder.Services.AddLoggingConfig();
+builder.Services.AddLoggingConfig(builder.Configuration);
+builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();

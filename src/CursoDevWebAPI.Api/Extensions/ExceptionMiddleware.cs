@@ -1,5 +1,4 @@
-﻿using Elmah.Io.AspNetCore;
-using System.Net;
+﻿using System.Net;
 
 namespace CursoDevWebAPI.Api.Extensions
 {
@@ -26,7 +25,7 @@ namespace CursoDevWebAPI.Api.Extensions
 
         private static void HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            exception.Ship(context);
+            //exception.Ship(context);
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
         }
     }
