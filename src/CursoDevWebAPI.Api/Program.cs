@@ -1,4 +1,5 @@
 using CursoDevWebAPI.Api.Configuration;
+using CursoDevWebAPI.Api.Extensions;
 using CursoDevWebAPI.Data.Context;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.ResolveDependencies();
 builder.Services.AddApiConfig();
 builder.Services.AddSwaggerConfig();
+builder.Services.AddLoggingConfig();
 
 var app = builder.Build();
 var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
@@ -44,7 +46,11 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseMvcConfiguration();
+
+app.UseLoggingConfig();
 
 app.UseSwaggerConfig(apiVersionDescriptionProvider);
 
